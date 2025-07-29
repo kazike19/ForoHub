@@ -26,14 +26,10 @@ public class PosteoDeTopicos {
 
     @Transactional
     public DatosDetalleTopico posteo(DatosPosteoTopico datos) {
-        /*if (!usuarioRepository.existsById(datos.idUsuario())){
-            throw new ValidacionExcepcion("No existe el usuario");
-        }*/
+
 
         UsuarioModel autor = usuarioRepository.findById(datos.idUsuario())
                 .orElseThrow(()-> new ValidacionExcepcion("No existe el usuario con ese el Id: "+datos.idUsuario()));
-
-        // aqui van los valiladores
 
         CursoModel cursoAsociado = cursoService.obtenerOCrearCurso(datos.curso());
 
@@ -46,7 +42,6 @@ public class PosteoDeTopicos {
         TopicoModel topicoNuevo = new TopicoModel(autor, datos, cursoAsociado);
 
         TopicoModel topicoGuardado = topicoRepository.save(topicoNuevo);
-
 
         return new DatosDetalleTopico(topicoGuardado);
     }

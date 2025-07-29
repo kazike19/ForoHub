@@ -6,6 +6,6 @@ public record DatosDetalleUsuarioResumen(
         String email
         ) {
     public DatosDetalleUsuarioResumen(UsuarioModel usuario) {
-        this(usuario.getId(), usuario.getNombre(), usuario.getEmail()); // Ajusta 'getCorreoElectronico' si el campo es diferente
+        this(usuario.getId(), usuario.getNombre(), usuario.getEmail());
     }
 }

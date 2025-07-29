@@ -18,7 +18,6 @@ import java.util.List;
 @Entity(name = "Usuario")
 @Getter
 @NoArgsConstructor
-//@AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class UsuarioModel implements UserDetails {
 

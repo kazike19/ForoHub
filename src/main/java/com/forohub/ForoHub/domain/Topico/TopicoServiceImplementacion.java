@@ -45,8 +45,4 @@ public class TopicoServiceImplementacion implements TopicoService{
 
         return new DatosDetalleTopico(topico);
     }
-
-
-
-
 }

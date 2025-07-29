@@ -20,7 +20,5 @@ public record DatosPosteoTopico(
         @Valid
         DatosCurso curso
 
-        //@NotNull(message = "La fecha de creacion no puede ser nula.")
-        //LocalDateTime fecha_creacion
         ) {
 }

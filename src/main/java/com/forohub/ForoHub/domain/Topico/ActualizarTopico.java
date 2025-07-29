@@ -2,9 +2,7 @@ package com.forohub.ForoHub.domain.Topico;
 
 import com.forohub.ForoHub.domain.Curso.CursoModel;
 import com.forohub.ForoHub.domain.Curso.CursoRepository;
-import com.forohub.ForoHub.domain.Curso.CursoService;
 import com.forohub.ForoHub.domain.Usuario.UsuarioRepository;
-import com.forohub.ForoHub.domain.ValidacionExcepcion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -12,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class ActualizarTopico {
@@ -25,28 +23,6 @@ public class ActualizarTopico {
 
     @Autowired
     private CursoRepository cursoRepository;
-
-    /*
-    @Transactional
-    public DatosDetalleTopico actualizar(Long id, DatosActualizarTopico datos) {
-        TopicoModel topico = topicoRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Tópico con ID " + id + " no encontrado."));
-
-        if (datos.titulo() != null && !datos.titulo().isBlank()) {
-            topico.setTitulo(datos.titulo());
-        }
-        if (datos.mensaje() != null && !datos.mensaje().isBlank()) {
-            topico.setMensaje(datos.mensaje());
-        }
-
-        Optional<TopicoModel> topicoExiste = topicoRepository.findByTituloAndMensajeAndCurso(topico.getTitulo(), topico.getMensaje(), topico.getCurso());
-
-        if (topicoExiste.isPresent() && !topicoExiste.get().getId().equals(id)){
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existe un topico con el mismo titulo, mensaje y curso, verifica por favor");
-        }
-
-        return new DatosDetalleTopico(topico);
-    }*/
 
 
     @Transactional
